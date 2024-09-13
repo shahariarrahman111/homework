@@ -1,0 +1,15 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TeacherController;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+Route::get('/home',[TeacherController::class, 'viewTeacher'])->name('home');
+Route::post('/store_teacher', [TeacherController::class, 'storeTeacher'])->name('store_teacher');
+Route::get('/edit_teacher', [TeacherController::class, 'editTeacher'])->name('edit_teacher');
+Route::get('/update_teacher/{id}',[TeacherController::class, 'updateTeacher'])->name('update_teacher/{id}');
+Route::put('/submit_teacher/{id}', [TeacherController::class, 'submitTeacher'])->name('submit_teacher/{id}');
